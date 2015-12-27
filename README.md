@@ -1,6 +1,6 @@
 # FrankenHUD-Builder
 A batch script to compile the TF2 HUD FrankenHUD from source.
 
-**TOOL NOT READY FOR USE. Come back in a little bit.**
+Go download a [release](https://github.com/colebob9/FrankenHUD-Builder/releases)! All you need is in that .zip file!
 
 Simply run `compiler.bat` to compile the HUD. You will find the compiled version in the `build` folder as if you were to download a HUD release.
