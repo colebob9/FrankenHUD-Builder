@@ -49,7 +49,7 @@ XCOPY /I "frankenhud-master\hud_src\resource\clientscheme.res" "build\frankenhud
 "%ProgramFiles(x86)%\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" build\frankenhud-core
 "%ProgramFiles(x86)%\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" build\frankenhud-style
 :: Clean up
-:: rmdir /s /q frankenhud-master
+rmdir /s /q frankenhud-master
 rmdir /s /q build\frankenhud-style
 rmdir /s /q build\frankenhud-core
 del /s /q *.zip
