@@ -1,5 +1,5 @@
 # FrankenHUD-Builder
-A batch script to compile the TF2 HUD [FrankenHUD](https://steamcommunity.com/groups/frankenhud) from source.
+A batch script to compile the TF2 HUD [FrankenHUD](https://steamcommunity.com/groups/frankenhud) from source. Released under the MIT [licence](https://github.com/colebob9/FrankenHUD-Builder/blob/master/LICENCE).
 
 Go download a [release](https://github.com/colebob9/FrankenHUD-Builder/releases)! All you need is in that .zip file!
 
