@@ -5,4 +5,4 @@ Go download a [release](https://github.com/colebob9/FrankenHUD-Builder/releases)
 
 Simply run `compiler.bat` to compile the HUD. You will find the compiled version in the `build` folder as if you were to download a HUD release.
 
-**Note: Make sure to run FrankenHUD-Builder in its directory (folder). The script is programmed to delete files with certain file extensions and may delete something unintentionally.**
+**Note: Make sure to run FrankenHUD-Builder in its directory (folder). The script is programmed to delete files with certain file extensions and may delete something unintentionally if ran somewhere else.**
