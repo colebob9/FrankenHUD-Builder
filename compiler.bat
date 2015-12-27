@@ -49,7 +49,6 @@ XCOPY /I "frankenhud-master\hud_src\resource\clientscheme.res" "build\frankenhud
 "%ProgramFiles(x86)%\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" build\frankenhud-core
 "%ProgramFiles(x86)%\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" build\frankenhud-style
 :: Clean up
-rmdir /s /q frankenhud-master
 rmdir /s /q build\frankenhud-style
 rmdir /s /q build\frankenhud-core
 del /s /q *.zip
@@ -66,6 +65,7 @@ mkdir "build\Extras\tf2-style fonts\frankenhud-style"
 MOVE "build\Extras\tf2-style fonts\resource" "build\Extras\tf2-style fonts\frankenhud-style\resource"
 "%ProgramFiles(x86)%\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" "build\Extras\tf2-style fonts\frankenhud-style"
 :: After build process
+rmdir /s /q frankenhud-master
 CLS
 ECHO Done! 
 ECHO You will find the compiled version in the "build" folder as if you were to download a HUD release.
