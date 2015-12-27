@@ -49,3 +49,7 @@ Temporary Items
 # files for release
 *.dll
 *.exe
+
+# build files
+*.vpk
+*.ttf

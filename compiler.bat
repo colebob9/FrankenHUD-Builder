@@ -32,21 +32,30 @@ wget.exe -O master.zip https://github.com/TheKins/frankenhud/archive/master.zip 
 md build
 md build\frankenhud-core
 md build\frankenhud-style
+md build\frankenhud-style\resource
 md build\frankenhud-fonts
 :: Organizing files in right order
+:: core folders
 XCOPY /E /I "frankenhud-master\hud_src\resource" "build\frankenhud-core\resource"
 XCOPY /E /I "frankenhud-master\hud_src\scripts" "build\frankenhud-core\scripts"
-MOVE "build\frankenhud-core\resource\monofont.tff" "build\frankenhud-fonts\"
-MOVE "build\frankenhud-core\resource\tf2modified.tff" "build\frankenhud-fonts\"
+DEL /Q "build\frankenhud-core\resource\monofont.ttf"
+DEL /Q "build\frankenhud-core\resource\tf2modified.ttf"
+DEL /Q "build\frankenhud-core\resource\clientscheme.res"
+::fonts
+XCOPY /I "frankenhud-master\hud_src\resource\monofont.ttf" "build\frankenhud-fonts\"
+XCOPY /I "frankenhud-master\hud_src\resource\tf2modified.ttf" "build\frankenhud-fonts\"
+XCOPY /I "frankenhud-master\hud_src\resource\clientscheme.res" "build\frankenhud-style\resource"
 :: VPK Packer
 "%ProgramFiles(x86)%\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" build\frankenhud-core
+"%ProgramFiles(x86)%\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" build\frankenhud-style
 :: Clean up
+rmdir /s /q frankenhud-master
+rmdir /s /q build\frankenhud-style
+rmdir /s /q build\frankenhud-core
+del /s /q *.zip
+:: After build process
+CLS
+ECHO Done! 
+ECHO You will find the compiled version in the "build" folder as if you were to download a HUD release.
 ECHO.
-Choice /M "Clean up files?"
-:: No
-If Errorlevel 2 GOTO afterclean
-:: Yes
-If Errorlevel 1 GOTO clean
-:clean
-
-:afterclean
+PAUSE
