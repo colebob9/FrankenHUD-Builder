@@ -17,7 +17,7 @@ EXIT
 :filesokay
 :: Title
 CLS
-ECHO FrankenHUD Builder vX.X.X
+ECHO FrankenHUD Builder v1.0.0
 ECHO Written by colebob9
 ECHO Released under the MIT licence.
 ECHO Source: https://github.com/colebob9/FrankenHUD-Builder
@@ -49,10 +49,22 @@ XCOPY /I "frankenhud-master\hud_src\resource\clientscheme.res" "build\frankenhud
 "%ProgramFiles(x86)%\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" build\frankenhud-core
 "%ProgramFiles(x86)%\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" build\frankenhud-style
 :: Clean up
-rmdir /s /q frankenhud-master
+:: rmdir /s /q frankenhud-master
 rmdir /s /q build\frankenhud-style
 rmdir /s /q build\frankenhud-core
 del /s /q *.zip
+:: organize into release-like folders
+md build\custom
+md build\Extras
+MOVE build\frankenhud-fonts build\custom\frankenhud-fonts
+MOVE build\frankenhud-core.vpk build\custom\frankenhud-core.vpk
+MOVE build\frankenhud-style.vpk build\custom\frankenhud-style.vpk
+:: Extras build
+XCOPY /E /I "frankenhud-master\extras_src" "build\Extras\"
+:: TF2 Style Fonts Build
+mkdir "build\Extras\tf2-style fonts\frankenhud-style"
+MOVE "build\Extras\tf2-style fonts\resource" "build\Extras\tf2-style fonts\frankenhud-style\resource"
+"%ProgramFiles(x86)%\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" "build\Extras\tf2-style fonts\frankenhud-style"
 :: After build process
 CLS
 ECHO Done! 
