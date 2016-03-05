@@ -17,7 +17,7 @@ EXIT
 :filesokay
 :: Title
 CLS
-ECHO FrankenHUD Builder v1.0.0
+ECHO FrankenHUD Builder v1.0.1
 ECHO Written by colebob9
 ECHO Released under the MIT licence.
 ECHO Source: https://github.com/colebob9/FrankenHUD-Builder
@@ -28,6 +28,8 @@ PAUSE
 :: Download and Extract
 wget.exe -O master.zip https://github.com/TheKins/frankenhud/archive/master.zip --no-check-certificate
 7za.exe x *.zip
+ECHO If you have anything custom for the HUD, put it in now.
+PAUSE
 :: Make build directories
 md build
 md build\frankenhud-core
